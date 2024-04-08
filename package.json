@@ -1,0 +1,50 @@
+{
+  "name": "@stock42/stock42-lib-hits",
+  "version": "1.0.0",
+  "description": "Stock42 hits lib. Report all logs, actions and more from your backend and server applications.",
+  "main": "dist/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stock42/stock42-lib-hits.git"
+  },
+  "keywords": [
+    "stock42",
+    "vision group",
+    "logs",
+    "hits",
+    "server audit",
+    "mobile applications monitoring",
+    "react native apps monitoring",
+    "applications analytics"
+  ],
+  "author": {
+    "name": "César Casas",
+    "email": "cesarcasas@bsdsolutions.com.ar",
+    "url": "https://www.linkedin.com/in/cesarcasas/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stock42/stock42-lib-hits/issues",
+    "email": "info@stock42.com"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "window"
+  ],
+  "homepage": "https://github.com/stock42/stock42-lib-hits#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4"
+  }
+}
