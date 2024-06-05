@@ -1,13 +1,26 @@
-import { prepare } from './request';
+import {
+	PrepareParams,
+	ITrack,
+} from './types.d'
 
-let request = null;
-export default async function init(applicationKey: string) {
+import { init, request } from './request';
+
+export default async function Stock42(props: PrepareParams) {
 	try {
-		request = await prepare({
-			applicationKey,
-		});
+		const instanceSID = await init(props);
+		console.info('instanceSID: ', instanceSID)
+		return {
+			track: (props: ITrack) => request({
+				method: 'POST',
+				data: {
+					...props,
+				},
+				sid: 'asdasd',
+				path: '',
+			})
+		}
 	} catch (err) {
-		console.info('Error initializing Stock42');
+		throw new Error('Error initializing Stock42');
 	}
 }
 

@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -36,47 +47,32 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("../src/index");
-function init() {
+var request_1 = require("./request");
+function Stock42(props) {
     return __awaiter(this, void 0, void 0, function () {
-        var track_1, _loop_1, x, err_1;
+        var instanceSID, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, (0, index_1.default)({
-                            appVersion: '1.0',
-                            appName: 'Stock42Test',
-                            userAgent: 'stock42agent',
-                            applicationToken: 'bd23a6fb-02e6-4ac6-8e5c-2aa28bd83db2-FV2AH3',
-                            deviceId: '1'
-                        })];
+                    return [4 /*yield*/, (0, request_1.init)(props)];
                 case 1:
-                    track_1 = (_a.sent()).track;
-                    _loop_1 = function (x) {
-                        setTimeout(function () {
-                            track_1({
-                                eventName: 'event testing',
-                                screenName: 'home',
-                                functionName: "function".concat(x),
-                                data: {
-                                    x: x,
-                                    msg: 'random number'
-                                }
-                            });
-                        }, 200 * x);
-                    };
-                    for (x = 0; x < 11; x++) {
-                        _loop_1(x);
-                    }
-                    return [3 /*break*/, 3];
+                    instanceSID = _a.sent();
+                    console.info('instanceSID: ', instanceSID);
+                    return [2 /*return*/, {
+                            track: function (props) { return (0, request_1.request)({
+                                method: 'POST',
+                                data: __assign({}, props),
+                                sid: 'asdasd',
+                                path: '',
+                            }); }
+                        }];
                 case 2:
                     err_1 = _a.sent();
-                    console.info('Fatal Hit Errors: ', err_1);
-                    return [3 /*break*/, 3];
+                    throw new Error('Error initializing Stock42');
                 case 3: return [2 /*return*/];
             }
         });
     });
 }
-init();
+exports.default = Stock42;
