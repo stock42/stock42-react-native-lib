@@ -1,6 +1,6 @@
 {
-  "name": "@stock42/stock42-lib-hits",
-  "version": "1.0.0",
+  "name": "stock42-lib-hits",
+  "version": "1.0.1",
   "description": "Stock42 hits lib. Report all logs, actions and more from your backend and server applications.",
   "main": "dist/src/index.js",
   "types": "src/types.d.ts",

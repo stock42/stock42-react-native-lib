@@ -34,9 +34,7 @@ async function request(params) {
             JSON.stringify(params.data)
             : undefined,
     };
-    const HOST = process?.env.NODE_ENV === 'PROD' ?
-        'https://services.visiongroup.nyc/core'
-        : `http://localhost:4530`;
+    const HOST = 'https://services.visiongroup.nyc/core';
     const url = new URL(`${HOST}/${PATH}${params.path}`);
     if (params.query) {
         Object.keys(params.query).forEach(key => url.searchParams.append(key, params.query[key]));

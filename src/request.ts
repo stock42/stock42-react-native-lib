@@ -45,10 +45,7 @@ export async function request(params: RequestParams): Promise<RequestResponse> {
 			:	undefined,
 	}
 
-	const HOST: string =
-		process?.env.NODE_ENV === 'PROD' ?
-			'https://services.visiongroup.nyc/core'
-		:	`http://localhost:4530`
+	const HOST: string = 'https://services.visiongroup.nyc/core'
 	const url = new URL(`${HOST}/${PATH}${params.path}`)
 	if (params.query) {
 		Object.keys(params.query).forEach(key =>
