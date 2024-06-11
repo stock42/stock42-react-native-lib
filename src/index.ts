@@ -1,16 +1,13 @@
-import {
-	PrepareParams,
-	ITrack,
-} from './types.d'
+import { type PrepareParams, type ITrack, type ITrackScreenshot } from './types.d'
 
-import { init, request } from './request';
+import { init, request } from './request'
 
-export default async function Stock42(props: PrepareParams) {
+export async function Stock42(props: PrepareParams) {
 	try {
-		const instanceSID = await init(props);
-		console.info('instanceSID: ', instanceSID)
-		return {
-			track: (props: ITrack) => request({
+		await init(props)
+
+		const track = (props: ITrack) =>
+			request({
 				method: 'POST',
 				data: {
 					...props,
@@ -18,9 +15,19 @@ export default async function Stock42(props: PrepareParams) {
 				sid: 'asdasd',
 				path: '',
 			})
-		}
+
+		const screenshot = (props: ITrackScreenshot) =>
+			request({
+				method: 'POST',
+				data: {
+					...props,
+					eventName: 'screenshot',
+				},
+				sid: 'asdasd',
+				path: '',
+			})
+		return { track, screenshot }
 	} catch (err) {
-		throw new Error('Error initializing Stock42');
+		throw new Error('Error initializing Stock42')
 	}
 }
-

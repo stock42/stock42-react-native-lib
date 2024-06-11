@@ -1,4 +1,4 @@
-export interface PrepareParams {
+export type PrepareParams = {
 	appVersion: string
 	userAgent: string
 	appName: string
@@ -6,7 +6,7 @@ export interface PrepareParams {
 	deviceId: string
 }
 
-export interface RequestParams {
+export type RequestParams = {
 	method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'UPDATE'
 	data?: object
 	query?: Record<string, string>
@@ -21,22 +21,36 @@ export interface RequestResponse {
 }
 
 export interface ApiResponse {
-  status: 'OK' | 'ERROR'
+	status: 'OK' | 'ERROR'
 	msg: string
 	ok: boolean
 }
 
-export interface ITrack {
-	eventName: string
+export type ITrack = {
+	eventName:
+		| 'hit'
+		| 'screenshot'
+		| 'request'
+		| 'call'
+		| 'identity'
+		| 'error'
+		| 'exception'
+		| 'info'
+		| 'custom'
 	screenName: string
 	functionName?: string
 	data?: object
 }
 
-export interface IScreenName {
+export type ITrackScreenshot = {
+	screenName: string
+	base64: string
+}
+
+export type IScreenName = {
 	screenName: string
 }
 
-export interface IScreenshot {
+export type IScreenshot = {
 	base64: string
 }
