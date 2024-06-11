@@ -56,20 +56,15 @@ export async function request(params: RequestParams): Promise<RequestResponse> {
 		)
 	}
 
-	try {
-		const response = await fetch(url.toString(), requestOptions)
-		const data = await response.json()
-		const toResponse = { ...(data as ApiResponse), status: response.status }
-		if (response.status !== 200) {
-			throw new Error(
-				`Error: Stock42 Hits is not init: ${response.status} : ${toResponse.msg}`,
-			)
-		}
-		return toResponse
-	} catch (error) {
-		console.error('Stock42 Fetch error:', error)
-		throw error
+	const response = await fetch(url.toString(), requestOptions)
+	const data = await response.json()
+	const toResponse = { ...(data as ApiResponse), status: response.status }
+	if (response.status !== 200) {
+		throw new Error(
+			`Error: Stock42 Hits is not init: ${response.status} : ${toResponse.msg}`,
+		)
 	}
+	return toResponse
 }
 
 export async function init(options: PrepareParams): Promise<string> {

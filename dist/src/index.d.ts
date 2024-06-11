@@ -1,4 +1,5 @@
-import { PrepareParams, ITrack } from './types.d';
-export default function Stock42(props: PrepareParams): Promise<{
-    track: (props: ITrack) => Promise<void | import("./types.d").RequestResponse>;
+import { type PrepareParams, type ITrack, type ITrackScreenshot } from './types.d';
+export declare function Stock42(props: PrepareParams): Promise<{
+    track: (props: ITrack) => Promise<import("./types.d").RequestResponse>;
+    screenshot: (props: ITrackScreenshot) => Promise<import("./types.d").RequestResponse>;
 }>;
