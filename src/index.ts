@@ -1,33 +1,19 @@
-import { type PrepareParams, type ITrack, type ITrackScreenshot } from './types.d'
+import { type PrepareParams } from './types/types.d.js'
 
-import { init, request } from './request'
+import { Request } from './lib/request'
+import { Track, Screenshot } from './services'
 
 export async function Stock42(props: PrepareParams) {
 	try {
-		await init(props)
+		const request = await new Request(props).init()
 
-		const track = (props: ITrack) =>
-			request({
-				method: 'POST',
-				data: {
-					...props,
-				},
-				sid: 'asdasd',
-				path: '',
-			})
-
-		const screenshot = (props: ITrackScreenshot) =>
-			request({
-				method: 'POST',
-				data: {
-					...props,
-					eventName: 'screenshot',
-				},
-				sid: 'asdasd',
-				path: '',
-			})
-		return { track, screenshot }
+		console.info('fetch: ', fetch)
+		return {
+			track: new Track(request).track,
+			screenshot: new Screenshot(request).screenshot,
+		}
 	} catch (err) {
-		throw new Error('Error initializing Stock42')
+		console.error(err)
+		throw new Error('Error initializing Stock42 for React Native')
 	}
 }

@@ -1,12 +1,13 @@
 {
-  "name": "stock42-lib-hits",
+  "name": "stock42-react-native-lib",
   "version": "1.0.1",
-  "description": "Stock42 hits lib. Report all logs, actions and more from your backend and server applications.",
+  "description": "Stock42 React Native Lib. Report all logs, actions and more from your backend and server applications.",
   "main": "dist/src/index.js",
   "types": "src/types.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "tsc test/index && node test",
+		"dev": "npx tsx watch ./test/index.ts",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
 		"clean": "rm -rf dist",
@@ -15,13 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stock42/stock42-lib-hits.git"
+    "url": "git+https://github.com/stock42/stock42-react-native-lib.git"
   },
   "keywords": [
     "stock42",
-    "vision group",
-    "logs",
-    "hits",
+    "react native",
     "mobile applications monitoring",
     "react native apps monitoring",
     "applications analytics"
@@ -33,7 +32,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stock42/stock42-lib-hits/issues",
+    "url": "https://github.com/stock42/stock42-react-native-lib/issues",
     "email": "info@stock42.com"
   },
   "engines": {
@@ -44,7 +43,7 @@
     "linux",
     "windows"
   ],
-  "homepage": "https://github.com/stock42/stock42-lib-hits#readme",
+  "homepage": "https://github.com/stock42/stock42-react-native-lib#readme",
   "devDependencies": {
     "@babel/eslint-parser": "^7.24.6",
     "@types/node": "^20.12.5",
