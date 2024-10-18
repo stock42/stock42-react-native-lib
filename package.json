@@ -7,10 +7,10 @@
   "scripts": {
     "build": "tsc",
     "test": "tsc test/index && node test",
-		"dev": "npx tsx watch ./test/index.ts",
+    "dev": "npx tsx watch ./test/index.ts",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
-		"clean": "rm -rf dist",
+    "clean": "rm -rf dist",
     "prepublishOnly": "npm run build",
     "prepare": "husky"
   },
@@ -61,5 +61,9 @@
   "files": [
     "dist",
     "src/types.d.ts"
-  ]
+  ],
+  "dependencies": {
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react-hooks": "^5.0.0"
+  }
 }
