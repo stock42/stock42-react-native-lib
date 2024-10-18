@@ -1,5 +1,5 @@
-import { type PrepareParams, type ITrack, type ITrackScreenshot } from './types.d';
+import { type PrepareParams } from './types/types.d.js';
 export declare function Stock42(props: PrepareParams): Promise<{
-    track: (props: ITrack) => Promise<import("./types.d").RequestResponse>;
-    screenshot: (props: ITrackScreenshot) => Promise<import("./types.d").RequestResponse>;
+    track: (props: import("./types/types.d.js").ITrack) => void;
+    screenshot: (props: import("./types/types.d.js").ITrackScreenshot) => void;
 }>;

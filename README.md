@@ -1,6 +1,6 @@
 - [Stock42 React Native](#stock42-react-native)
 - [Installation](#installation)
-- [Stock42 React Native Analytics](#stock42-react-native-analytics)
+- [Stock42 React Native lib Analytics](#stock42-react-native-lib-analytics)
 	- [Initializing](#initializing)
 	- [Sending hits](#sending-hits)
 	- [Sending screenshot](#sending-screenshot)
@@ -11,7 +11,7 @@
 # Stock42 React Native
 
 ![Platform](https://img.shields.io/badge/platform-android%20%7C%20ios%20%7C%20expo%20-%239cf)
-[![NPM Badge](https://img.shields.io/npm/v/stock42-react-native)](https://www.npmjs.com/package/stock42-react-native)
+[![NPM Badge](https://img.shields.io/npm/v/stock42-react-native-lib)](https://www.npmjs.com/package/stock42-react-native-lib)
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-%23ff69b4)
 
@@ -23,7 +23,7 @@ Official lib for works with *Stock42 Services*.
 $ npm install stock42-react-native-lib --save
 ```
 
-# Stock42 React Native Analytics
+# Stock42 React Native lib Analytics
 
 ## Initializing
 First step: get a valid applicationToken from [Stock42](https://stock42.com). Register a new tenant and create a new application.

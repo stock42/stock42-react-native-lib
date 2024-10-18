@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert_1 = require("assert");
-const index_1 = require("../src/index");
+const index_js_1 = require("../src/index.js");
 async function init() {
     try {
-        const { track, screenshot } = await (0, index_1.Stock42)({
+        const { track, screenshot } = await (0, index_js_1.Stock42)({
             appVersion: '1.0',
             appName: 'Stock42Test',
             userAgent: 'stock42agent',

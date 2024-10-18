@@ -1,6 +1,6 @@
 {
   "name": "stock42-react-native-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stock42 React Native Lib. Report all logs, actions and more from your backend and server applications.",
   "main": "dist/src/index.js",
   "types": "src/types.d.ts",
